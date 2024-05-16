@@ -1,0 +1,255 @@
+@tailwind base;
+
+@font-face {
+  font-family: "Nunito";
+  src: local("Nunito"),
+    url("./assets/fonts/Nunito/static/Nunito-Regular.ttf") format("truetype");
+  font-weight: normal;
+}
+
+* {
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+}
+
+table.basic {
+  @apply w-full rounded-md;
+}
+table.basic thead tr td,
+table.basic thead tr th {
+  @apply bg-blue-100;
+}
+table.basic tr td {
+  @apply border border-blue-200 p-1 pl-3 w-28 border-solid;
+}
+
+div::-webkit-scrollbar {
+  height: 5px;
+}
+
+div::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+div::-webkit-scrollbar-thumb {
+  background: #005ce6;
+  border-radius: 10px;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+body {
+  -ms-overflow-style: none !important; /* IE and Edge */
+  scrollbar-width: none !important; /* Firefox */
+}
+
+html::-webkit-scrollbar {
+  display: none !important;
+  scroll-padding-top: 5.5rem;
+  scroll-behavior: smooth !important;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+html {
+  -ms-overflow-style: none !important; /* IE and Edge */
+  scrollbar-width: none !important; /* Firefox */
+  scroll-padding-top: 5.5rem;
+  scroll-behavior: smooth !important;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 0;
+  margin: 0;
+}
+
+:root {
+  --main-color: #005ce6;
+  --main-color-alt: #;
+  --main-transition-duration: 0.5s;
+  --transparent-color: rgb(15 116 143 / 40%);
+  --main-padding-top: 100px;
+  --main-padding-bottom: 100px;
+  --section--background: #ececec;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "cairo", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (min-widht: 425px) {
+  body {
+    margin-right: -20px;
+  }
+}
+@media (min-width: 1075px) {
+  .container {
+    width: 1000px;
+    left: 36px;
+  }
+}
+
+@media (min-width: 992) {
+  .container {
+    width: 970px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1130px;
+  }
+}
+
+.cart-button {
+  position: relative;
+  height: 40px;
+  border-radius: 8px;
+  color: #fff;
+  background: #2563eb;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.cart-button:active {
+  transform: scale(0.9);
+}
+
+.cart-button .shopping-cart {
+  position: absolute;
+  top: 50%;
+  left: -20%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  font-size: 1.5rem;
+}
+
+.cart-button .shopping-box {
+  position: absolute;
+  top: -20%;
+  left: 52%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  font-size: 0.75rem;
+}
+
+.cart-button .add-to-cart,
+.cart-button .added {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-wrap: nowrap;
+}
+
+.cart-button .added {
+  opacity: 0;
+}
+
+.cart-button.clicked .shopping-cart {
+  animation: cart 1.5s ease-in-out forwards;
+}
+
+.cart-button.clicked .shopping-box {
+  animation: box 1.5s ease-in-out forwards;
+}
+
+.cart-button.clicked .add-to-cart {
+  animation: text1 1.5s ease-in-out forwards;
+}
+
+.cart-button.clicked .added {
+  animation: text2 1.5s ease-in-out forwards;
+}
+
+.box::after {
+  animation: rotate 4s linear infinite;
+}
+
+@keyframes cart {
+  0% {
+    left: -10%;
+  }
+
+  40%,
+  60% {
+    left: 50%;
+  }
+
+  100% {
+    left: 110%;
+  }
+}
+
+@keyframes box {
+  0%,
+  40% {
+    top: -20%;
+  }
+
+  60% {
+    top: 40%;
+    left: 52%;
+  }
+
+  100% {
+    top: 40%;
+    left: 112%;
+  }
+}
+
+@keyframes text1 {
+  0% {
+    opacity: 1;
+  }
+
+  20%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes text2 {
+  0%,
+  80% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@tailwind components;
+@tailwind utilities;
