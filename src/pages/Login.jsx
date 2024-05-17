@@ -23,7 +23,7 @@ function LoginPage() {
 
         onSubmit: async (values) => {
             try {
-                const res = await axios.post('http://127.0.0.1/phpreactcrud/login/login.php', values);
+                const res = await axios.post('https://moga-library.000webhostapp.com/login/login.php', values);
 
                 if (res.status === 200) {
 
