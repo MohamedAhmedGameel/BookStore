@@ -15,7 +15,7 @@ const Product = () => {
     const bookId = params.id;
 
     useEffect(() => {
-        const apiUrl = `http://127.0.0.1:80/phpreactcrud/api/action.php?id=${bookId}`;
+        const apiUrl = `https://moga-library.000webhostapp.com/api/action.php?id=${bookId}`;
 
         fetch(apiUrl, {
             method: "GET",
@@ -36,9 +36,9 @@ const Product = () => {
     }, [bookId]);
 
     const handleClick = () => {
-        const title = book.book_name;
+        const title = book.name;
         const price = book.price;
-        const image = book.book_image;
+        const image = book.image;
         const id = book.id;
         dispatch(addToCart({ id, title, price, image, quantity }))
         setClicked(true);
